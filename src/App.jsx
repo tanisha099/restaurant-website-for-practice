@@ -4,7 +4,7 @@ function App() {
   
 
   return (
-    <div className="w-screen h-screen text-white bg-gray-700">
+    <div>
       <Navbar/>
       <Mainroutes/>
     </div>
