@@ -9,6 +9,7 @@ export default function Navbar() {
     { to: '/about', label: 'About' },
     { to: '/recipes', label: 'Recipes' },
      { to: '/create', label: 'Create' },
+     { to: '/Liked', label: 'Liked' },
   ];
 
   const linkClass = ({ isActive }) =>

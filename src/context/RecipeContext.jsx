@@ -1,12 +1,13 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useEffect, useState } from 'react';
 
-// ✅ Context object (PascalCase)
 export const RecipeContext = createContext(null);
 
-
-// ✅ Provider component (also PascalCase)
 export const RecipeProvider = ({ children }) => {
   const [data, setData] = useState([]);
+
+  useEffect(() => {
+    setData(JSON.parse(localStorage.getItem("recipes")) || []);
+  },[]); 
 
   return (
     <RecipeContext.Provider value={{ data, setData }}>

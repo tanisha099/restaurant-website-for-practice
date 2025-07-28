@@ -9,8 +9,10 @@ function Create() {
   const navigate = useNavigate();
   const SubmitHandler = (recipe) => {
     recipe.id = nanoid();
-    console.log(recipe)
-    setData([...data, recipe]);
+    const copydata = [...data];
+    copydata.push(recipe);
+    setData(copydata);
+    localStorage.setItem("recipes",JSON.stringify(copydata));
     reset();
     navigate("/recipes")
   };
@@ -67,6 +69,7 @@ function Create() {
           <label className="block text-sm font-medium text-gray-700">Category</label>
           <select
             {...register('Catogory')}
+            
             className="mt-1 w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
           >
             <option value="">Select Category</option>
